@@ -1,0 +1,50 @@
+C:\Users\root\Desktop\RubiksCubeSimulator-master\bin\Debug\Rubiks Cube Simulator.exe.config
+C:\Users\root\Desktop\RubiksCubeSimulator-master\bin\Debug\Rubiks Cube Simulator.exe
+C:\Users\root\Desktop\RubiksCubeSimulator-master\bin\Debug\Rubiks Cube Simulator.pdb
+C:\Users\root\Desktop\RubiksCubeSimulator-master\obj\Debug\RubiksCubeSimulator.csproj.AssemblyReference.cache
+C:\Users\root\Desktop\RubiksCubeSimulator-master\obj\Debug\RubiksCubeSimulator.Forms.MainForm.resources
+C:\Users\root\Desktop\RubiksCubeSimulator-master\obj\Debug\RubiksCubeSimulator.Properties.Resources.resources
+C:\Users\root\Desktop\RubiksCubeSimulator-master\obj\Debug\RubiksCubeSimulator.csproj.GenerateResource.cache
+C:\Users\root\Desktop\RubiksCubeSimulator-master\obj\Debug\RubiksCubeSimulator.csproj.CoreCompileInputs.cache
+C:\Users\root\Desktop\RubiksCubeSimulator-master\obj\Debug\Rubiks Cube Simulator.exe
+C:\Users\root\Desktop\RubiksCubeSimulator-master\obj\Debug\Rubiks Cube Simulator.pdb
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия\bin\Debug\Rubiks Cube Simulator.exe.config
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия\bin\Debug\Rubiks Cube Simulator.exe
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия\bin\Debug\Rubiks Cube Simulator.pdb
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия\obj\Debug\RubiksCubeSimulator.csproj.AssemblyReference.cache
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия\obj\Debug\RubiksCubeSimulator.Forms.MainForm.resources
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия\obj\Debug\RubiksCubeSimulator.Properties.Resources.resources
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия\obj\Debug\RubiksCubeSimulator.csproj.GenerateResource.cache
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия\obj\Debug\RubiksCubeSimulator.csproj.CoreCompileInputs.cache
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия\obj\Debug\Rubiks Cube Simulator.exe
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия\obj\Debug\Rubiks Cube Simulator.pdb
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия\bin\Debug\Rubiks Cube Simulator.exe.config
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия\bin\Debug\Rubiks Cube Simulator.exe
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия\bin\Debug\Rubiks Cube Simulator.pdb
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия\obj\Debug\RubiksCubeSimulator.csproj.AssemblyReference.cache
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия\obj\Debug\RubiksCubeSimulator.Forms.MainForm.resources
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия\obj\Debug\RubiksCubeSimulator.Properties.Resources.resources
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия\obj\Debug\RubiksCubeSimulator.csproj.GenerateResource.cache
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия\obj\Debug\RubiksCubeSimulator.csproj.CoreCompileInputs.cache
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия\obj\Debug\Rubiks Cube Simulator.exe
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия\obj\Debug\Rubiks Cube Simulator.pdb
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия — копия\obj\Debug\RubiksCubeSimulator.csproj.AssemblyReference.cache
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия — копия\obj\Debug\RubiksCubeSimulator.Forms.MainForm.resources
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия — копия\obj\Debug\RubiksCubeSimulator.Properties.Resources.resources
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия — копия\obj\Debug\RubiksCubeSimulator.csproj.GenerateResource.cache
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия — копия\obj\Debug\RubiksCubeSimulator.csproj.CoreCompileInputs.cache
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия — копия\obj\Debug\Rubiks Cube Simulator.exe
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия — копия\obj\Debug\Rubiks Cube Simulator.pdb
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия — копия\bin\Debug\Rubiks Cube Simulator.exe.config
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия — копия\bin\Debug\Rubiks Cube Simulator.exe
+C:\Users\root\Desktop\RubiksCubeSimulator-master — копия — копия — копия — копия\bin\Debug\Rubiks Cube Simulator.pdb
+C:\Users\root\Desktop\pre-product\bin\Debug\Rubiks Cube Simulator.exe.config
+C:\Users\root\Desktop\pre-product\bin\Debug\Rubiks Cube Simulator.exe
+C:\Users\root\Desktop\pre-product\bin\Debug\Rubiks Cube Simulator.pdb
+C:\Users\root\Desktop\pre-product\obj\Debug\RubiksCubeSimulator.csproj.AssemblyReference.cache
+C:\Users\root\Desktop\pre-product\obj\Debug\RubiksCubeSimulator.Forms.MainForm.resources
+C:\Users\root\Desktop\pre-product\obj\Debug\RubiksCubeSimulator.Properties.Resources.resources
+C:\Users\root\Desktop\pre-product\obj\Debug\RubiksCubeSimulator.csproj.GenerateResource.cache
+C:\Users\root\Desktop\pre-product\obj\Debug\RubiksCubeSimulator.csproj.CoreCompileInputs.cache
+C:\Users\root\Desktop\pre-product\obj\Debug\Rubiks Cube Simulator.exe
+C:\Users\root\Desktop\pre-product\obj\Debug\Rubiks Cube Simulator.pdb

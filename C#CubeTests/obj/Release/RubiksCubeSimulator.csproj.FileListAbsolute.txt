@@ -1,0 +1,10 @@
+C:\Users\root\Desktop\pre-product\bin\Release\Rubiks Cube Simulator.exe.config
+C:\Users\root\Desktop\pre-product\bin\Release\Rubiks Cube Simulator.exe
+C:\Users\root\Desktop\pre-product\bin\Release\Rubiks Cube Simulator.pdb
+C:\Users\root\Desktop\pre-product\obj\Release\RubiksCubeSimulator.csproj.AssemblyReference.cache
+C:\Users\root\Desktop\pre-product\obj\Release\RubiksCubeSimulator.Forms.MainForm.resources
+C:\Users\root\Desktop\pre-product\obj\Release\RubiksCubeSimulator.Properties.Resources.resources
+C:\Users\root\Desktop\pre-product\obj\Release\RubiksCubeSimulator.csproj.GenerateResource.cache
+C:\Users\root\Desktop\pre-product\obj\Release\RubiksCubeSimulator.csproj.CoreCompileInputs.cache
+C:\Users\root\Desktop\pre-product\obj\Release\Rubiks Cube Simulator.exe
+C:\Users\root\Desktop\pre-product\obj\Release\Rubiks Cube Simulator.pdb

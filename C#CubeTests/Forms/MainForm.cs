@@ -1,12 +1,13 @@
 ﻿using System.Windows.Forms;
 using RubiksCubeSimulator.Rubiks;
-using System.Threading;
+using System.Threading.Tasks;
 
 namespace RubiksCubeSimulator.Forms
 {
     public partial class MainForm : Form
     {
         private RubiksCube rubiksCube;
+
         public MainForm()
         {
             InitializeComponent();
@@ -18,11 +19,13 @@ namespace RubiksCubeSimulator.Forms
             rubiksCube = new RubiksCube(Settings.Instance.CubeColors);
         }
 
-        private void textBoxCommand_KeyDown(object sender, KeyEventArgs e)
+        private async void textBoxCommand_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode != Keys.Enter) return;
 
-            Thread thread = new Thread(new ThreadStart(() =>
+            labellErrorStatus.Text = "In Process...";
+
+            await Task.Run(() =>
             {
                 rubiksCube.StartMath();
 
@@ -30,11 +33,7 @@ namespace RubiksCubeSimulator.Forms
                 {
                     labellErrorStatus.Text = "All was calculated";
                 });
-            }));
-
-            thread.Start();
-
-            labellErrorStatus.Text = "in Process...";
+            });
         }
     }
 }

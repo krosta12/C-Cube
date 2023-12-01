@@ -26,6 +26,7 @@
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.labellErrorStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             label7 = new System.Windows.Forms.Label();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -75,15 +76,26 @@
             // labellErrorStatus
             // 
             this.labellErrorStatus.Name = "labellErrorStatus";
-            this.labellErrorStatus.Size = new System.Drawing.Size(274, 17);
+            this.labellErrorStatus.Size = new System.Drawing.Size(305, 17);
             this.labellErrorStatus.Spring = true;
             this.labellErrorStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(229, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Sort";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(315, 82);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(label7);
             this.Controls.Add(this.textBoxCommand);
@@ -106,6 +118,7 @@
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.ToolStripStatusLabel labellErrorStatus;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Button button1;
     }
 }
 

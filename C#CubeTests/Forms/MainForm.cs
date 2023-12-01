@@ -1,6 +1,7 @@
 ﻿using System.Windows.Forms;
 using RubiksCubeSimulator.Rubiks;
 using System.Threading.Tasks;
+using System;
 
 namespace RubiksCubeSimulator.Forms
 {
@@ -22,18 +23,43 @@ namespace RubiksCubeSimulator.Forms
         private async void textBoxCommand_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode != Keys.Enter) return;
-
-            labellErrorStatus.Text = "In Process...";
-
-            await Task.Run(() =>
+            if (labellErrorStatus.Text != "Sorting")
             {
-                rubiksCube.StartMath();
+                labellErrorStatus.Text = "In Process...";
 
-                this.Invoke((MethodInvoker)delegate
+                await Task.Run(() =>
                 {
-                    labellErrorStatus.Text = "All was calculated";
+                    rubiksCube.StartMath();
+
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        labellErrorStatus.Text = "All was calculated";
+                    });
                 });
-            });
+            }
+        }
+
+        private async void button1_Click(object sender, System.EventArgs e)
+        {
+            Control button = (Control)sender;
+            if (labellErrorStatus.Text == "In Process...")
+            {
+                button.Text = "Try Later";
+            }
+            else
+            {
+                button.Text = "sort";
+                labellErrorStatus.Text = "Sorting";
+                await Task.Run(() =>
+                {
+                    FileSorter.SortFileByDigits("output.txt", "sortedOutput.txt");
+
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        labellErrorStatus.Text = "List sorted!";
+                    });
+                });
+            }
         }
     }
 }

@@ -61,6 +61,7 @@
     <Compile Include="Rubiks\CubeColorScheme.cs" />
     <Compile Include="Rubiks\CubeMove.cs" />
     <Compile Include="Rubiks\Enumerations.cs" />
+    <Compile Include="Rubiks\FIleSorter.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SettingsBase.cs" />
     <Compile Include="Forms\MainForm.cs">

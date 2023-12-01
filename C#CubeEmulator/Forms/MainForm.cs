@@ -46,7 +46,6 @@ namespace RubiksCubeSimulator.Forms
                     foreach (var move in moveList)
                     {
                         count++;
-                        lblStatus.Text = "Last Move: " + move;
                         rubiksCube.MakeMove(move);
                     }
                 }

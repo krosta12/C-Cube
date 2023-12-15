@@ -8,6 +8,7 @@ namespace RubiksCubeSimulator.Forms
     public partial class MainForm : Form
     {
         private RubiksCube rubiksCube;
+        private static Graphs graphs;
 
         public MainForm()
         {
@@ -60,6 +61,12 @@ namespace RubiksCubeSimulator.Forms
                     });
                 });
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            graphs = new Graphs();
+            graphs.Show();
         }
     }
 }

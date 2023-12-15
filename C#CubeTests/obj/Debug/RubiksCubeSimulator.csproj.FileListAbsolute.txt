@@ -58,3 +58,4 @@ C:\Users\root\Desktop\rubics-master\C#Cube\C#CubeTests\bin\Debug\Rubiks Cube Sim
 C:\Users\root\Desktop\rubics-master\C#Cube\C#CubeTests\bin\Debug\Rubiks Cube Simulator.exe
 C:\Users\root\Desktop\rubics-master\C#Cube\C#CubeTests\bin\Debug\Rubiks Cube Simulator.pdb
 C:\Users\root\Desktop\rubics-master\C#Cube\C#CubeTests\obj\Debug\RubiksCubeSimulator.Forms.MainForm.resources
+C:\Users\root\Desktop\rubics-master\C#Cube\C#CubeTests\obj\Debug\RubiksCubeSimulator.Forms.Graphs.resources

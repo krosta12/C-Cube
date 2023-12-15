@@ -205,6 +205,8 @@ namespace RubiksCubeSimulator.Rubiks
             {
                 for (int i = indices[0]; i < allChars.Length; i++)
                 {
+                    Console.WriteLine("da");
+
                     for (int i2 = indices[1]; i2 < (length > 1 ? allChars.Length : 1); i2++)
                     {
                         for (int i3 = indices[2]; i3 < (length > 2 ? allChars.Length : 1); i3++)

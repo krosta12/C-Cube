@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text;
 
 namespace RubiksCubeSimulator.Rubiks
 {
@@ -198,14 +199,13 @@ namespace RubiksCubeSimulator.Rubiks
                 var stateLines = File.ReadAllLines("state.txt");
                 length = int.Parse(stateLines[0]);
                 indices = stateLines[1].Split().Select(long.Parse).ToArray();
-                outputLines = File.ReadAllLines("output.txt").ToList();
             }
 
             for (; length <= 12; length++)
             {
                 for (long i = indices[0]; i < 1; i++)
                 {
-                    for (long i2 = indices[1]; i2 < (length > 1 ? (allChars.Length/2) : 1); i2++)
+                    for (long i2 = indices[1]; i2 < (length > 1 ? (allChars.Length / 2) : 1); i2++)
                     {
                         for (long i3 = indices[2]; i3 < (length > 2 ? allChars.Length : 1); i3++)
                         {
@@ -262,7 +262,11 @@ namespace RubiksCubeSimulator.Rubiks
                                                                 if (iteration % 100000 == 0)
                                                                 {
                                                                     File.WriteAllLines("state.txt", new string[] { length.ToString(), string.Join(" ", indices) });
-                                                                    File.WriteAllLines("output.txt", outputLines);
+                                                                    using (StreamWriter writer = new StreamWriter("output.txt", true))
+                                                                    {
+                                                                        foreach (string line in outputLines) { writer.WriteLine(line); }
+                                                                    }
+                                                                    outputLines.Clear();
                                                                 }
                                                             }
                                                             indices[11] = 0;

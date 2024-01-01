@@ -18,3 +18,4 @@ C:\Users\root\Desktop\rubics-master\C#Cube\C#CubeTests\obj\Release\RubiksCubeSim
 C:\Users\root\Desktop\rubics-master\C#Cube\C#CubeTests\obj\Release\RubiksCubeSimulator.csproj.CoreCompileInputs.cache
 C:\Users\root\Desktop\rubics-master\C#Cube\C#CubeTests\obj\Release\Rubiks Cube Simulator.exe
 C:\Users\root\Desktop\rubics-master\C#Cube\C#CubeTests\obj\Release\Rubiks Cube Simulator.pdb
+C:\Users\root\Desktop\rubics-master\C#Cube\C#CubeTests\obj\Release\RubiksCubeSimulator.Forms.Graphs.resources

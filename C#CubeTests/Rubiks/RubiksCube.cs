@@ -186,10 +186,10 @@ namespace RubiksCubeSimulator.Rubiks
         public void StartMath()
         {
             var outputLines = new List<string>(); // list for str-s
-            int count = 0;
+            long count = 0;
             var moveList = new List<CubeMove>();
             string[] allChars = { "r", "rb", "u", "ub", "l", "lb", "d", "db", "f", "fb", "b", "bb" };
-            int[] indices = new int[8];
+            long[] indices = new long[12];
             int length = 1;
             int iteration = 0;
 
@@ -197,63 +197,81 @@ namespace RubiksCubeSimulator.Rubiks
             {
                 var stateLines = File.ReadAllLines("state.txt");
                 length = int.Parse(stateLines[0]);
-                indices = stateLines[1].Split().Select(int.Parse).ToArray();
+                indices = stateLines[1].Split().Select(long.Parse).ToArray();
                 outputLines = File.ReadAllLines("output.txt").ToList();
             }
 
-            for (; length <= 8; length++)
+            for (; length <= 12; length++)
             {
-                for (int i = indices[0]; i < allChars.Length; i++)
+                for (long i = indices[0]; i < 1; i++)
                 {
-                    Console.WriteLine("da");
-
-                    for (int i2 = indices[1]; i2 < (length > 1 ? allChars.Length : 1); i2++)
+                    for (long i2 = indices[1]; i2 < (length > 1 ? (allChars.Length/2) : 1); i2++)
                     {
-                        for (int i3 = indices[2]; i3 < (length > 2 ? allChars.Length : 1); i3++)
+                        for (long i3 = indices[2]; i3 < (length > 2 ? allChars.Length : 1); i3++)
                         {
-                            for (int i4 = indices[3]; i4 < (length > 3 ? allChars.Length : 1); i4++)
+                            for (long i4 = indices[3]; i4 < (length > 3 ? allChars.Length : 1); i4++)
                             {
-                                for (int i5 = indices[4]; i5 < (length > 4 ? allChars.Length : 1); i5++)
+                                for (long i5 = indices[4]; i5 < (length > 4 ? allChars.Length : 1); i5++)
                                 {
-                                    for (int i6 = indices[5]; i6 < (length > 5 ? allChars.Length : 1); i6++)
+                                    for (long i6 = indices[5]; i6 < (length > 5 ? allChars.Length : 1); i6++)
                                     {
-                                        for (int i7 = indices[6]; i7 < (length > 6 ? allChars.Length : 1); i7++)
+                                        for (long i7 = indices[6]; i7 < (length > 6 ? allChars.Length : 1); i7++)
                                         {
-                                            for (int i8 = indices[7]; i8 < (length > 7 ? allChars.Length : 1); i8++)
+                                            for (long i8 = indices[7]; i8 < (length > 7 ? allChars.Length : 1); i8++)
                                             {
-                                                List<string> moves = new List<string>();
-                                                moves.Add(allChars[i]);
-                                                if (length > 1) moves.Add(allChars[i2]);
-                                                if (length > 2) moves.Add(allChars[i3]);
-                                                if (length > 3) moves.Add(allChars[i4]);
-                                                if (length > 4) moves.Add(allChars[i5]);
-                                                if (length > 5) moves.Add(allChars[i6]);
-                                                if (length > 6) moves.Add(allChars[i7]);
-                                                if (length > 7) moves.Add(allChars[i8]);
-
-                                                foreach (string str in moves)
+                                                for (long i9 = indices[8]; i9 < (length > 8 ? allChars.Length : 1); i9++)
                                                 {
-                                                    moveList.Add(new CubeMove(string.Join(" ", str)));
-                                                }
-                                                while (!Solved | count == 0)
-                                                {
-                                                    foreach (var move in moveList)
+                                                    for (long i10 = indices[9]; i10 < (length > 9 ? allChars.Length : 1); i10++)
                                                     {
-                                                        count++;
-                                                        MakeMove(move);
-                                                    }
-                                                }
-                                                moveList.Clear();
-                                                outputLines.Add($"{string.Join(" ", moves)} -> {count}");
-                                                count = 0;
+                                                        for (long i11 = indices[10]; i11 < (length > 10 ? allChars.Length : 1); i11++)
+                                                        {
+                                                            for (long i12 = indices[11]; i12 < (length > 11 ? allChars.Length : 1); i12++)
+                                                            {
+                                                                List<string> moves = new List<string>();
+                                                                moves.Add(allChars[i]);
+                                                                if (length > 1) moves.Add(allChars[i2]);
+                                                                if (length > 2) moves.Add(allChars[i3]);
+                                                                if (length > 3) moves.Add(allChars[i4]);
+                                                                if (length > 4) moves.Add(allChars[i5]);
+                                                                if (length > 5) moves.Add(allChars[i6]);
+                                                                if (length > 6) moves.Add(allChars[i7]);
+                                                                if (length > 7) moves.Add(allChars[i8]);
+                                                                if (length > 8) moves.Add(allChars[i9]);
+                                                                if (length > 9) moves.Add(allChars[i10]);
+                                                                if (length > 10) moves.Add(allChars[i11]);
+                                                                if (length > 11) moves.Add(allChars[i12]);
 
-                                                indices = new int[] { i, i2, i3, i4, i5, i6, i7, i8 };
-                                                iteration++;
-                                                if (iteration % 100000 == 0)
-                                                {
-                                                    File.WriteAllLines("state.txt", new string[] { length.ToString(), string.Join(" ", indices) });
-                                                    File.WriteAllLines("output.txt", outputLines);
+                                                                foreach (string str in moves)
+                                                                {
+                                                                    moveList.Add(new CubeMove(string.Join(" ", str)));
+                                                                }
+                                                                while (!Solved | count == 0)
+                                                                {
+                                                                    foreach (var move in moveList)
+                                                                    {
+                                                                        count++;
+                                                                        MakeMove(move);
+                                                                    }
+                                                                }
+                                                                moveList.Clear();
+                                                                outputLines.Add($"{string.Join(" ", moves)} -> {count}");
+                                                                count = 0;
+
+                                                                indices = new long[] { i, i2, i3, i4, i5, i6, i7, i8, i9, i10, i11, i12 };
+                                                                iteration++;
+                                                                if (iteration % 100000 == 0)
+                                                                {
+                                                                    File.WriteAllLines("state.txt", new string[] { length.ToString(), string.Join(" ", indices) });
+                                                                    File.WriteAllLines("output.txt", outputLines);
+                                                                }
+                                                            }
+                                                            indices[11] = 0;
+                                                        }
+                                                        indices[10] = 0;
+                                                    }
+                                                    indices[9] = 0;
                                                 }
+                                                indices[8] = 0;
                                             }
                                             indices[7] = 0;
                                         }

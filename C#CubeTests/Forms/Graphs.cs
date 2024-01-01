@@ -22,13 +22,14 @@ namespace RubiksCubeSimulator.Forms
         void maxGraphs()
         {
             string[] lines = File.ReadAllLines("output.txt");
-            int[] oldTemp = { 0, 0, 0, 0, 0, 0, 0, 0 };
+            long[] oldTemp = { 0, 0, 0, 0, 0, 0, 0, 0 ,0, 0, 0, 0 };
             foreach (string s in lines)
             {
                 string[] temp = s.Split(new string[] { " -> " }, StringSplitOptions.None);
-                if (oldTemp[temp[0].Split(' ').Length - 1] < Convert.ToInt32(temp[1]))
+                if (oldTemp[temp[0].Split(' ').Length - 1] < Convert.ToInt64(temp[1]))
                 {
-                    oldTemp[temp[0].Split(' ').Length - 1] = Convert.ToInt32(temp[1]);
+                    oldTemp[temp[0].Split(' ').Length - 1] = Convert.ToInt64(temp[1]);
+                    chart1.Series[temp[0].Split(' ').Length - 1].Points.Clear();
                     chart1.Series[temp[0].Split(' ').Length - 1].Points.AddXY(Convert.ToDouble(1), Convert.ToDouble(oldTemp[temp[0].Split(' ').Length - 1]));
                     chart1.Series[temp[0].Split(' ').Length - 1].Name = $"слой номер {temp[0].Split(' ').Length} - {oldTemp[temp[0].Split(' ').Length - 1]}";
                 }
@@ -38,7 +39,7 @@ namespace RubiksCubeSimulator.Forms
         void minGraphs()
         {
             string[] lines = File.ReadAllLines("output.txt");
-            int[] oldTemp = { 90000, 90000, 90000, 90000, 90000, 90000, 90000, 90000 };
+            long[] oldTemp = { 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000 };
 
             foreach (var series in chart1.Series)
             {
@@ -47,9 +48,9 @@ namespace RubiksCubeSimulator.Forms
             foreach (string s in lines)
             {
                 string[] temp = s.Split(new string[] { " -> " }, StringSplitOptions.None);
-                if (oldTemp[temp[0].Split(' ').Length - 1] > Convert.ToInt32(temp[1]))
+                if (oldTemp[temp[0].Split(' ').Length - 1] > Convert.ToInt64(temp[1]))
                 {
-                    oldTemp[temp[0].Split(' ').Length - 1] = Convert.ToInt32(temp[1]);
+                    oldTemp[temp[0].Split(' ').Length - 1] = Convert.ToInt64(temp[1]);
                     chart1.Series[temp[0].Split(' ').Length - 1].Points.Clear();
                     chart1.Series[temp[0].Split(' ').Length - 1].Points.AddXY(Convert.ToDouble(1), Convert.ToDouble(oldTemp[temp[0].Split(' ').Length - 1]));
                     chart1.Series[temp[0].Split(' ').Length - 1].Name = $"слой номер {temp[0].Split(' ').Length} - {oldTemp[temp[0].Split(' ').Length - 1]}";
@@ -60,8 +61,8 @@ namespace RubiksCubeSimulator.Forms
         void averageGraphs()
         {
             string[] lines = File.ReadAllLines("output.txt");
-            int[] answer = { 0, 0, 0, 0, 0, 0, 0, 0 };
-            int[] counter = { 0, 0, 0, 0, 0, 0, 0, 0 };
+            long[] answer = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            long[] counter = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
             foreach (var series in chart1.Series)
             {
@@ -71,7 +72,7 @@ namespace RubiksCubeSimulator.Forms
             {
                 string[] temp = s.Split(new string[] { " -> " }, StringSplitOptions.None);
 
-                answer[temp[0].Split(' ').Length - 1] += Convert.ToInt32(temp[1]);
+                answer[temp[0].Split(' ').Length - 1] += Convert.ToInt64(temp[1]);
                 counter[temp[0].Split(' ').Length - 1] += 1;
             }
             for (int i = 0; i < answer.Length; i++)

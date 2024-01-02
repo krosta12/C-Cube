@@ -21,74 +21,82 @@ namespace RubiksCubeSimulator.Forms
 
         void maxGraphs()
         {
-            string[] lines = File.ReadAllLines("output.txt");
-            long[] oldTemp = { 0, 0, 0, 0, 0, 0, 0, 0 ,0, 0, 0, 0 };
-            foreach (string s in lines)
+            using (StreamReader reader = new StreamReader("output.txt"))
             {
-                string[] temp = s.Split(new string[] { " -> " }, StringSplitOptions.None);
-                if (oldTemp[temp[0].Split(' ').Length - 1] < Convert.ToInt64(temp[1]))
+                int [] oldTemp = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+                while (!reader.EndOfStream)
                 {
-                    oldTemp[temp[0].Split(' ').Length - 1] = Convert.ToInt64(temp[1]);
-                    chart1.Series[temp[0].Split(' ').Length - 1].Points.Clear();
-                    chart1.Series[temp[0].Split(' ').Length - 1].Points.AddXY(Convert.ToDouble(1), Convert.ToDouble(oldTemp[temp[0].Split(' ').Length - 1]));
-                    chart1.Series[temp[0].Split(' ').Length - 1].Name = $"слой номер {temp[0].Split(' ').Length} - {oldTemp[temp[0].Split(' ').Length - 1]}";
+                    string line = reader.ReadLine();
+                    string[] temp = line.Split(new string[] { " -> " }, StringSplitOptions.None);
+
+                    if (oldTemp[temp[0].Split(' ').Length - 1] < Convert.ToInt64(temp[1]))
+                    {
+                        oldTemp[temp[0].Split(' ').Length - 1] = (int)Convert.ToInt64(temp[1]);
+                        chart1.Series[temp[0].Split(' ').Length - 1].Points.Clear();
+                        chart1.Series[temp[0].Split(' ').Length - 1].Points.AddXY(Convert.ToDouble(1), Convert.ToDouble(oldTemp[temp[0].Split(' ').Length - 1]));
+                        chart1.Series[temp[0].Split(' ').Length - 1].Name = $"слой номер {temp[0].Split(' ').Length} - {oldTemp[temp[0].Split(' ').Length - 1]}";
+                    }
                 }
             }
         }
 
         void minGraphs()
         {
-            string[] lines = File.ReadAllLines("output.txt");
-            long[] oldTemp = { 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000 };
-
-            foreach (var series in chart1.Series)
+            using (StreamReader reader = new StreamReader("output.txt"))
             {
-                series.Points.Clear();
-            }
-            foreach (string s in lines)
-            {
-                string[] temp = s.Split(new string[] { " -> " }, StringSplitOptions.None);
-                if (oldTemp[temp[0].Split(' ').Length - 1] > Convert.ToInt64(temp[1]))
+                int[] oldTemp = { 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000 };
+                foreach (var series in chart1.Series)
                 {
-                    oldTemp[temp[0].Split(' ').Length - 1] = Convert.ToInt64(temp[1]);
-                    chart1.Series[temp[0].Split(' ').Length - 1].Points.Clear();
-                    chart1.Series[temp[0].Split(' ').Length - 1].Points.AddXY(Convert.ToDouble(1), Convert.ToDouble(oldTemp[temp[0].Split(' ').Length - 1]));
-                    chart1.Series[temp[0].Split(' ').Length - 1].Name = $"слой номер {temp[0].Split(' ').Length} - {oldTemp[temp[0].Split(' ').Length - 1]}";
+                    series.Points.Clear();
+                }
+
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+                    string[] temp = line.Split(new string[] { " -> " }, StringSplitOptions.None);
+
+                    if (oldTemp[temp[0].Split(' ').Length - 1] > Convert.ToInt64(temp[1]))
+                    {
+                        oldTemp[temp[0].Split(' ').Length - 1] = (int)Convert.ToInt64(temp[1]);
+                        chart1.Series[temp[0].Split(' ').Length - 1].Points.Clear();
+                        chart1.Series[temp[0].Split(' ').Length - 1].Points.AddXY(Convert.ToDouble(1), Convert.ToDouble(oldTemp[temp[0].Split(' ').Length - 1]));
+                        chart1.Series[temp[0].Split(' ').Length - 1].Name = $"слой номер {temp[0].Split(' ').Length} - {oldTemp[temp[0].Split(' ').Length - 1]}";
+                    }
                 }
             }
         }
 
         void averageGraphs()
         {
-            string[] lines = File.ReadAllLines("output.txt");
-            long[] answer = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-            long[] counter = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            using (StreamReader reader = new StreamReader("output.txt"))
+            {
+                long[] answerSum = new long[12];
+                int[] counter = new int[12];
 
-            foreach (var series in chart1.Series)
-            {
-                series.Points.Clear();
-            }
-            foreach (string s in lines)
-            {
-                string[] temp = s.Split(new string[] { " -> " }, StringSplitOptions.None);
-
-                answer[temp[0].Split(' ').Length - 1] += Convert.ToInt64(temp[1]);
-                counter[temp[0].Split(' ').Length - 1] += 1;
-            }
-            for (int i = 0; i < answer.Length; i++)
-            {
-                if (counter[i] > 0)
+                foreach (var series in chart1.Series)
                 {
-                    answer[i] = answer[i] / counter[i];
+                    series.Points.Clear();
                 }
-            }
 
-            foreach (int a in answer)
-            {
-                if (a > 0)
+                while (!reader.EndOfStream)
                 {
-                    chart1.Series[Array.IndexOf(answer, a)].Points.AddXY(Convert.ToDouble(1), Convert.ToDouble(a));
-                    chart1.Series[Array.IndexOf(answer, a)].Name = $"слой номер {Array.IndexOf(answer, a) + 1} - {answer[Array.IndexOf(answer, a)]}";
+                    string line = reader.ReadLine();
+                    string[] temp = line.Split(new string[] { " -> " }, StringSplitOptions.None);
+
+                    int index = temp[0].Split(' ').Length - 1;
+
+                    answerSum[index] += Convert.ToInt64(temp[1]);
+                    counter[index]++;
+                }
+
+                for (int i = 0; i < answerSum.Length; i++)
+                {
+                    if (counter[i] > 0)
+                    {
+                        long average = answerSum[i] / counter[i];
+                        chart1.Series[i].Points.AddXY(1.0, average);
+                        chart1.Series[i].Name = $"слой номер {i + 1} - {average}";
+                    }
                 }
             }
         }

@@ -10,11 +10,7 @@ namespace RubiksCubeSimulator.Forms
         private RubiksCube rubiksCube;
         private static Graphs graphs;
 
-        public MainForm()
-        {
-            InitializeComponent();
-            SetRubiksCube();
-        }
+        public MainForm() { InitializeComponent(); SetRubiksCube(); }
 
         private void SetRubiksCube()
         {
@@ -31,11 +27,7 @@ namespace RubiksCubeSimulator.Forms
                 await Task.Run(() =>
                 {
                     rubiksCube.StartMath();
-
-                    this.Invoke((MethodInvoker)delegate
-                    {
-                        labellErrorStatus.Text = "All was calculated";
-                    });
+                    this.Invoke((MethodInvoker)delegate { labellErrorStatus.Text = "All was calculated"; });
                 });
             }
         }
@@ -43,10 +35,7 @@ namespace RubiksCubeSimulator.Forms
         private async void button1_Click(object sender, System.EventArgs e)
         {
             Control button = (Control)sender;
-            if (labellErrorStatus.Text == "In Process...")
-            {
-                button.Text = "Try Later";
-            }
+            if (labellErrorStatus.Text == "In Process...") { button.Text = "Try Later"; }
             else
             {
                 button.Text = "sort";
@@ -55,18 +44,11 @@ namespace RubiksCubeSimulator.Forms
                 {
                     FileSorter.SortFileByDigits("output.txt", "sortedOutput.txt");
 
-                    this.Invoke((MethodInvoker)delegate
-                    {
-                        labellErrorStatus.Text = "List sorted!";
-                    });
+                    this.Invoke((MethodInvoker)delegate { labellErrorStatus.Text = "List sorted!"; });
                 });
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            graphs = new Graphs();
-            graphs.Show();
-        }
+        private void button2_Click(object sender, EventArgs e) { graphs = new Graphs(); graphs.Show(); }
     }
 }

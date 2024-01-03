@@ -77,10 +77,7 @@ namespace RubiksCubeSimulator.Rubiks
         }
 
         public event EventHandler<CubeMove> MoveMade;
-        protected virtual void OnMoveMade(CubeMove move)
-        {
-            MoveMade?.Invoke(this, move);
-        }
+        protected virtual void OnMoveMade(CubeMove move) { MoveMade?.Invoke(this, move); }
         public static RubiksCube Create(CubeColorScheme scheme)
         {
             var colors = new Color[6][,];
@@ -96,12 +93,7 @@ namespace RubiksCubeSimulator.Rubiks
 
         public static Color[,] CreateFace(Color faceColor)
         {
-            return new[,]
-            {
-               {faceColor, faceColor, faceColor},
-               {faceColor, faceColor, faceColor},
-               {faceColor, faceColor, faceColor}
-            };
+            return new[,] { {faceColor, faceColor, faceColor}, {faceColor, faceColor, faceColor}, {faceColor, faceColor, faceColor} };
         }
         private Color[,] GetFaceColors(CubeSide side)
         {
@@ -136,14 +128,12 @@ namespace RubiksCubeSimulator.Rubiks
             if (rotation == Rotation.Cw)
             {
                 for (int i = 2; i >= 0; i--)
-                    for (int i2 = 0; i2 < 3; i2++)
-                        newFace[i2, 2 - i] = faceToRotate[i, i2];
+                    for (int i2 = 0; i2 < 3; i2++) { newFace[i2, 2 - i] = faceToRotate[i, i2];  }
             }
             else
             {
                 for (int i = 2; i >= 0; i--)
-                    for (int i2 = 0; i2 < 3; i2++)
-                        newFace[2 - i, i2] = faceToRotate[i2, i];
+                    for (int i2 = 0; i2 < 3; i2++) { newFace[2 - i, i2] = faceToRotate[i2, i]; }
             }
 
             SetSide(side, newFace);
@@ -156,8 +146,7 @@ namespace RubiksCubeSimulator.Rubiks
             {
                 for (int row = 0; row < array.GetLength(0); row++)
                 {
-                    for (int clm = 0; clm < array.GetLength(1); clm++)
-                        colorStack.Push(array[row, clm]);
+                    for (int clm = 0; clm < array.GetLength(1); clm++) { colorStack.Push(array[row, clm]); }
                 }
             }
 
@@ -174,10 +163,7 @@ namespace RubiksCubeSimulator.Rubiks
 
                 for (int row = 0; row < source[i].GetLength(0); row++)
                 {
-                    for (int clm = 0; clm < source[i].GetLength(1); clm++)
-                    {
-                        cloned[i][row, clm] = source[i][row, clm];
-                    }
+                    for (int clm = 0; clm < source[i].GetLength(1); clm++) { cloned[i][row, clm] = source[i][row, clm]; }
                 }
             }
 
@@ -241,18 +227,11 @@ namespace RubiksCubeSimulator.Rubiks
                                                                 if (length > 10) moves.Add(allChars[i11]);
                                                                 if (length > 11) moves.Add(allChars[i12]);
 
-                                                                foreach (string str in moves)
-                                                                {
-                                                                    moveList.Add(new CubeMove(string.Join(" ", str)));
-                                                                }
+                                                                foreach (string str in moves) { moveList.Add(new CubeMove(string.Join(" ", str))); }
+
                                                                 while (!Solved | count == 0)
-                                                                {
-                                                                    foreach (var move in moveList)
-                                                                    {
-                                                                        count++;
-                                                                        MakeMove(move);
-                                                                    }
-                                                                }
+                                                                { foreach (var move in moveList) { count++; MakeMove(move); } }
+
                                                                 moveList.Clear();
                                                                 outputLines.Add($"{string.Join(" ", moves)} -> {count}");
                                                                 count = 0;
@@ -262,10 +241,7 @@ namespace RubiksCubeSimulator.Rubiks
                                                                 if (iteration % 100000 == 0)
                                                                 {
                                                                     File.WriteAllLines("state.txt", new string[] { length.ToString(), string.Join(" ", indices) });
-                                                                    using (StreamWriter writer = new StreamWriter("output.txt", true))
-                                                                    {
-                                                                        foreach (string line in outputLines) { writer.WriteLine(line); }
-                                                                    }
+                                                                    using (StreamWriter writer = new StreamWriter("output.txt", true)) { foreach (string line in outputLines) { writer.WriteLine(line); } }
                                                                     outputLines.Clear();
                                                                 }
                                                             }
